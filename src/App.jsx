@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import GifList from './Components/GifList/GifList.jsx';
-import Search from './Components/Search/Search.jsx';
+import GifList from './Components/GifList.jsx';
+import Search from './Components/Search.jsx';
 import getData from './Data/getData.jsx';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
 
     <section className="container">
       <Search setKeyword={setKeyword} />
-        <GifList gifs={gifs} />
+      <GifList gifs={gifs} />
     </section>
 
   );
