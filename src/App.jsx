@@ -17,9 +17,9 @@ function App() {
 
   return (
 
-    <section>
+    <section className="container">
       <Search setKeyword={setKeyword} />
-      <GifList gifs={gifs} />
+        <GifList gifs={gifs} />
     </section>
 
   );

@@ -5,17 +5,11 @@ const GifList = ({gifs}) => {
 
   return (
 
-    gifs.map(({id, title, url}) => {
-
-      return (
-
-        <Gif
-        key={id}
-        title={title}
-        url={url} />
-
-      )
-    })
+    <section className="list__container">
+      {
+        gifs.map(({id, title, url}) => <Gif Key={id} title={title} url={url} />)
+      }
+    </section>
 
   );
 };
