@@ -1,27 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import GifList from './Components/GifList.jsx';
-import Search from './Components/Search.jsx';
-import getData from './Data/getData.jsx';
+import React from 'react';
+import { Link, Route } from 'wouter';
+import Home from './Pages/Home.jsx';
 
 function App() {
 
-  const [gifs, setGifs] = useState([]);
-  const [keyword, setKeyword] = useState('');
-
-  useEffect(() => {
-
-    getData({ keyword })
-      .then(gifs => setGifs(gifs))
-
-  }, [keyword]);
-
   return (
 
-    <section className="container">
-      <Search setKeyword={setKeyword} />
-      <GifList gifs={gifs} />
-    </section>
-
+    <div>
+      <Link to="/gifs" element={<Home />}>Gifs</Link>
+      <Route component={Home} path="/gifs"/>
+    </div>
   );
 };
 
