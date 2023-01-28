@@ -10,9 +10,11 @@ function App() {
 
     <>
       <Navigation />
+      <Route path="/gif-app/" component={Gifs}/>
       <Route path="/gifs" component={Gifs}/>
       <Route path="/stickers" component={Stickers}/>
     </>
+
   );
 };
 

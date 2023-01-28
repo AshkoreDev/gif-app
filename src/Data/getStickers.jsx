@@ -19,7 +19,6 @@ function getStickers({keyword = 'panda'} = {}) {
 
           return { id, title, url };
         })
-
         return stickers;
       }
     })
