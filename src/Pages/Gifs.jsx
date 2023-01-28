@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import GifList from './../Components/GifList.jsx';
 import Search from './../Components/Search.jsx';
-import getData from './../Data/getData.jsx';
+import getGifs from './../Data/getGifs.jsx';
 
-const Home = () => {
+const Gifs = () => {
 
   const [gifs, setGifs] = useState([]);
   const [keyword, setKeyword] = useState('');
@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
 
     setLoading(true);
-    getData({ keyword })
+    getGifs({ keyword })
       .then(gifs => {
         setGifs(gifs);
         setLoading(false);
@@ -29,4 +29,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Gifs;

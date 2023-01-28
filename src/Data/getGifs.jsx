@@ -1,6 +1,6 @@
 const KEY = 'YplHkpvGL28F1ag0OiTg0OTxBgVVfFmi';
 
-function getData({keyword = 'panda'} = {}) {
+function getGifs({keyword = 'panda'} = {}) {
 
   const API = `https://api.giphy.com/v1/gifs/search?api_key=${KEY}&q=${keyword}&limit=20&offset=0&rating=g`;
 
@@ -24,4 +24,4 @@ function getData({keyword = 'panda'} = {}) {
     })
 };
 
-export default getData;
+export default getGifs;

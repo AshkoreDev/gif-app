@@ -1,15 +1,18 @@
 import React from 'react';
-import { Link, Route } from 'wouter';
-import Home from './Pages/Home.jsx';
+import { Route } from 'wouter';
+import Gifs from './Pages/Gifs.jsx';
+import Stickers from './Pages/Stickers.jsx';
+import Navigation from './Components/Navigation.jsx';
 
 function App() {
 
   return (
 
-    <div>
-      <Link to="/gifs" element={<Home />}>Gifs</Link>
-      <Route component={Home} path="/gifs"/>
-    </div>
+    <>
+      <Navigation />
+      <Route path="/gifs" component={Gifs}/>
+      <Route path="/stickers" component={Stickers}/>
+    </>
   );
 };
 
