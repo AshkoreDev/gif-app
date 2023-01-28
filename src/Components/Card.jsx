@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Gif = ({title, url}) => {
+const Card = ({title, url}) => {
 
   return (
 
@@ -11,4 +11,4 @@ const Gif = ({title, url}) => {
   );
 };
 
-export default Gif;
+export default Card;

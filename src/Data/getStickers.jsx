@@ -2,7 +2,7 @@ const KEY = 'YplHkpvGL28F1ag0OiTg0OTxBgVVfFmi';
 
 function getStickers({keyword = 'panda'} = {}) {
 
-  const API = `https://api.giphy.com/v1/stickers/search?api_key=${KEY}&q=${keyword}&limit=5&offset=0&rating=g`;
+  const API = `https://api.giphy.com/v1/stickers/search?api_key=${KEY}&q=${keyword}&limit=20&offset=0&rating=g`;
 
   return fetch(API)
     .then(res => res.json())
@@ -16,7 +16,7 @@ function getStickers({keyword = 'panda'} = {}) {
 
           const { images, id, title } = image;
           const { url } = images.downsized_medium;
-          console.log(title);
+
           return { id, title, url };
         })
 

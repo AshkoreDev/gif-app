@@ -8,7 +8,7 @@ const Navigation = () => {
   return (
 
     <nav>
-      <Link to="/gifs" component={<Gifs />}>Gify-App</Link>
+      <Link to="/" component={<Gifs />}>Gify-App</Link>
       <ul>
         <li>
           <Link to="/gifs" component={<Gifs />}>Gifs</Link>

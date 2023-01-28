@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import GifList from './../Components/GifList.jsx';
-import Search from './../Components/Search.jsx';
 import getGifs from './../Data/getGifs.jsx';
+import Search from './../Components/Search.jsx';
+import CardsList from './../Components/CardsList.jsx';
+
 
 const Gifs = () => {
 
@@ -22,8 +23,8 @@ const Gifs = () => {
   return (
 
     <section className="container">
-      <Search setKeyword={setKeyword} />
-      { loading ? <h2>Cargando...</h2> : <GifList gifs={gifs} /> }
+      <Search setKeyword={setKeyword} title="Buscar Gifs"/>
+      { loading ? <h2>Cargando...</h2> : <CardsList item={gifs} /> }
     </section>
 
   );
