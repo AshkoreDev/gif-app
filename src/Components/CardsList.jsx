@@ -1,13 +1,13 @@
 import React from 'react';
 import Card from './Card.jsx';
 
-const CardsList = ({item}) => {
+const CardsList = ({data}) => {
 
   return (
 
-    <section className="list__container">
+    <section className="list">
       {
-        item.map(({id, title, url}) => <Card Key={id} title={title} url={url} />)
+        data.map(({id, title, url}) => <Card Key={id} title={title} url={url} />)
       }
     </section>
 

@@ -9,12 +9,17 @@
   min-height: 100vh;
 }
 
-.list__container {
+.list {
   margin: 80px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
+}
+
+.loading {
+  margin: 50px auto;
+  text-align: center;
 }
 
 /* Cards */

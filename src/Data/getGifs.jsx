@@ -1,4 +1,4 @@
-const KEY = 'YplHkpvGL28F1ag0OiTg0OTxBgVVfFmi';
+import { KEY } from './key.jsx';
 
 function getGifs({keyword = 'panda'} = {}) {
 
