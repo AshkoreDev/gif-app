@@ -1,6 +1,6 @@
 import { KEY } from './key.jsx';
 
-function getTrendingGifs({keyword} = {}) {
+function getTrendingGifs() {
 
   const API = `https://api.giphy.com/v1/gifs/trending?api_key=${KEY}&limit=20&offset=0&rating=g`;
 

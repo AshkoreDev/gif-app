@@ -4,10 +4,10 @@ import CardsList from './../Components/CardsList.jsx';
 import { useData } from './../Hooks/useData';
 import getTrendingGifs from './../Data/getTrendingGifs.jsx';
 
-const Gifs = () => {
+const Home = () => {
  
-  const [keyword, setKeyword] = useState('');
-  const { loading, data } = useData(getTrendingGifs, keyword);
+  // const [keyword, setKeyword] = useState('');
+  const { loading, data } = useData(getTrendingGifs);
 
   return (
 
@@ -19,4 +19,4 @@ const Gifs = () => {
   );
 };
 
-export default Gifs;
+export default Home;
