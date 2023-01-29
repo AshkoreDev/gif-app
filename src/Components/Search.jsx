@@ -6,7 +6,7 @@ const Search = ({setKeyword, title}) => {
 
     <form className="search__form" onSubmit={(e) => e.preventDefault()}>
       <label htmlFor="search">{title}</label>
-      <input type="text" id="search" placeholder="Buscar..." onChange={(e) => setKeyword(e.target.value)}/>
+      <input type="text" id="search" autoFocus autoComplete="off" placeholder="Buscar..." onChange={(e) => setKeyword(e.target.value)}/>
     </form>
 
   );
