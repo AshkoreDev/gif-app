@@ -12,7 +12,6 @@ const Gifs = () => {
   return (
 
     <section className="container">
-      {/*<Search setKeyword={setKeyword} title="Buscar Gifs"/>*/}
       <h2>Trending Gifs</h2>
       { loading ? <h2 className="loading">Cargando...</h2> : <CardsList data={data} /> }
     </section>

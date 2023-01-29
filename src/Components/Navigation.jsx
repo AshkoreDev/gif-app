@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'wouter';
 import logo from './../logo.png';
 import Gifs from './../Pages/Gifs.jsx';
+import Home from './../Pages/Home.jsx';
 import Stickers from './../Pages/Stickers.jsx';
 
 const Navigation = () => {
@@ -9,7 +10,7 @@ const Navigation = () => {
   return (
 
     <nav>
-      <Link to="/gif-app/" component={<Gifs />}>
+      <Link to="/gif-app/" component={<Home />}>
         <img src={logo} alt="" width="40" height="40" />
         <p>Gify-App</p>
       </Link>
