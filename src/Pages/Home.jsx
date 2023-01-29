@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Search from './../Components/Search.jsx';
 import CardsList from './../Components/CardsList.jsx';
 import { useData } from './../Hooks/useData';
