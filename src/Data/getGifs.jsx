@@ -1,8 +1,8 @@
-import { KEY } from './key.jsx';
+import { API_URL, API_KEY } from './settings.jsx';
 
 function getGifs({keyword = 'panda'} = {}) {
 
-  const API = `https://api.giphy.com/v1/gifs/search?api_key=${KEY}&q=${keyword}&limit=20&offset=0&rating=g`;
+  const API = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=20&offset=0&rating=g`;
 
   return fetch(API)
     .then(res => res.json())

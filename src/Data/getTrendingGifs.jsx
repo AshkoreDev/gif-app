@@ -1,8 +1,8 @@
-import { KEY } from './key.jsx';
+import { API_URL, API_KEY } from './settings.jsx';
 
 function getTrendingGifs() {
 
-  const API = `https://api.giphy.com/v1/gifs/trending?api_key=${KEY}&limit=20&offset=0&rating=g`;
+  const API = `${API_URL}/gifs/trending?api_key=${API_KEY}&limit=20&offset=0&rating=g`;
 
   return fetch(API)
     .then(res => res.json())
