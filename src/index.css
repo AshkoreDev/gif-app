@@ -98,7 +98,7 @@ nav > a {
 .dot-spinner {
   --uib-size: 40px;
   --uib-speed: .9s;
-  --uib-color: lightgrey;
+  --uib-color: grey;
 
   position: relative;
   display: flex;
