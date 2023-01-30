@@ -7,7 +7,7 @@ const CardsList = ({data}) => {
 
     <section className="list">
       {
-        data.map(({id, title, url}) => <Card Key={id} title={title} url={url} />)
+        data.map(({id, title, url}) => <Card Key={id} id={id} title={title} url={url} />)
       }
     </section>
 
