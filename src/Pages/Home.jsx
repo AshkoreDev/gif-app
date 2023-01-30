@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Search from './../Components/Search.jsx';
+import Spinner from './../Components/Spinner.jsx';
 import CardsList from './../Components/CardsList.jsx';
-import { useData } from './../Hooks/useData';
 import getTrendingGifs from './../Data/getTrendingGifs.jsx';
+import { useData } from './../Hooks/useData';
 
 const Home = () => {
  
@@ -13,10 +14,12 @@ const Home = () => {
 
     <section className="container">
       <h2>Trending Gifs</h2>
-      { loading ? <h2 className="loading">Cargando...</h2> : <CardsList data={data} /> }
+      { loading ? <Spinner /> : <CardsList data={data} /> }
     </section>
 
   );
 };
 
 export default Home;
+
+// https://uiball.com/loaders/

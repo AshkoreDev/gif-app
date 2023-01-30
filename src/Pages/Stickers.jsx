@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Search from './../Components/Search.jsx';
+import Spinner from './../Components/Spinner.jsx';
 import CardsList from './../Components/CardsList.jsx';
-import { useData } from './../Hooks/useData';
 import getStickers from './../Data/getStickers.jsx';
+import { useData } from './../Hooks/useData';
 
 const Stickers = () => {
 
@@ -13,7 +14,7 @@ const Stickers = () => {
 
     <section className="container">
       <Search setKeyword={setKeyword} title="Buscar Stickers"/>
-      { loading ? <h2 className="loading">Cargando...</h2> : <CardsList data={data} /> }
+      { loading ? <Spinner /> : <CardsList data={data} /> }
     </section>
 
   );
