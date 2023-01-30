@@ -11,6 +11,8 @@ body::-webkit-scrollbar {
 
 .container {
   min-height: 100vh;
+  margin-top: 180px;
+  /*background: black;*/
 }
 
 .container > h2 {
@@ -62,9 +64,12 @@ body::-webkit-scrollbar {
 
 /* Navbar */
 nav {
-  margin-bottom: 40px;
+  width: 100%;
   padding: 20px 30px;
   flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  background: white;
 }
 
 nav, nav ul, nav > a {
