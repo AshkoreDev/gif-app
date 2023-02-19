@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useData } from './../Hooks/useData';
+import { useNearScreen } from './../Hooks/useNearScreen';
 import getTrendingSearch from './../Data/getTrendingSearch.jsx';
 
 const SearchList = () => {
@@ -33,4 +34,13 @@ const SearchList = () => {
 	);
 };
 
-export default SearchList;
+function LazySearchList() {
+	
+	const { isNearScreen, fromRef } = useNearScreen();
+
+	return <div ref={fromRef}> 
+		{ isNearScreen ? <SearchList /> : null } 
+	</div>
+}
+
+export default LazySearchList;
