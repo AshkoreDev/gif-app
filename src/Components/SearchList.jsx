@@ -18,8 +18,6 @@ const SearchList = () => {
       })
   }, []);
 
-	console.log(data)
-
 	return (
 
 	 <div className="searchList">
@@ -34,6 +32,7 @@ const SearchList = () => {
 	);
 };
 
+
 function LazySearchList() {
 	
 	const { isNearScreen, fromRef } = useNearScreen();
@@ -41,6 +40,6 @@ function LazySearchList() {
 	return <div ref={fromRef}> 
 		{ isNearScreen ? <SearchList /> : null } 
 	</div>
-}
+};
 
 export default LazySearchList;

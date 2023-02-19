@@ -6,7 +6,6 @@ export function useData(fun, keyword='') {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    console.log('-')
 
     setLoading(true);
     fun({ keyword })
