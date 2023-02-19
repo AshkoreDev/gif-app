@@ -1,10 +1,9 @@
 import React from 'react';
 import { useData } from './../Hooks/useData';
-import { useNearScreen } from './../Hooks/useNearScreen';
 import Spinner from './../Components/Spinner.jsx';
 import CardsList from './../Components/CardsList.jsx';
 
-export const TrendingContainer = ({fun, title}) => {
+const TrendingContainer = ({fun, title}) => {
 
 	const { loading, data } = useData(fun);
 
@@ -18,12 +17,4 @@ export const TrendingContainer = ({fun, title}) => {
   );
 };
 
-
-export function LazyTrendingContainer({fun, title}) {
-	
-	const { isNearScreen, fromRef } = useNearScreen();
-
-	return <div ref={fromRef}> 
-		{ isNearScreen ? <TrendingContainer fun={fun} title={title} /> : null } 
-	</div>
-};
+export default TrendingContainer;

@@ -32,14 +32,4 @@ const SearchList = () => {
 	);
 };
 
-
-function LazySearchList() {
-	
-	const { isNearScreen, fromRef } = useNearScreen({ distance: '50px' });
-
-	return <div ref={fromRef}> 
-		{ isNearScreen ? <SearchList /> : null } 
-	</div>
-};
-
-export default LazySearchList;
+export default SearchList;

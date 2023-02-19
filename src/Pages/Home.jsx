@@ -2,8 +2,10 @@ import React from 'react';
 import getTrendingGifs from './../Data/getTrendingGifs.jsx';
 import getTrendingStickers from './../Data/getTrendingStickers.jsx';
 
-import LazySearchList from './../Components/SearchList.jsx';
-import { TrendingContainer, LazyTrendingContainer } from './../Components/TrendingContainer.jsx';
+import LazySearchList from './../Components/LazySearchList.jsx';
+import TrendingContainer from './../Components/TrendingContainer.jsx';
+import LazyTrendingContainer from './../Components/LazyTrendingContainer.jsx';
+
 
 const Home = () => {
 
