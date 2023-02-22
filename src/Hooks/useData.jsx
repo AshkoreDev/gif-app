@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-export function useData(fun, keyword='') {
+const INITIAL_PAGE = 0;
 
+export function useData(fun, keyword='') {
+  
   const [data, setData] = useState([]);
+  const [page, setPage] = useState(INITIAL_PAGE);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -15,5 +18,16 @@ export function useData(fun, keyword='') {
       })
   }, [keyword]);
 
-  return { loading, data };
+  useEffect(() => {
+
+    if(page === INITIAL_PAGE) return;
+
+    fun({ keyword, page })
+      .then(nextData => {
+        setData(prevData => prevData.concat(nextData))
+      })
+
+  }, [keyword, page, setData]);
+
+  return { loading, data, setPage };
 }

@@ -22,7 +22,7 @@ body::-webkit-scrollbar {
 }
 
 .list {
-  min-height: 100vh;
+  height: 60vh;
   margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

@@ -8,13 +8,16 @@ import { useData } from './../Hooks/useData';
 const Gifs = () => {
  
   const [keyword, setKeyword] = useState('');
-  const { loading, data } = useData(getGifs, keyword);
+  const { loading, data, setPage } = useData(getGifs, keyword);
+
+  const handleNextPage = () => setPage(prevPage => prevPage + 1);
 
   return (
 
     <section className="container">
       <Search setKeyword={setKeyword} title="Buscar Gifs"/>
       { loading ? <Spinner /> : <CardsList data={data} /> }
+      <button onClick={handleNextPage}>Next</button>
     </section>
 
   );
