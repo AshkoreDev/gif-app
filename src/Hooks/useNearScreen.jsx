@@ -15,7 +15,7 @@ export function useNearScreen({ distance = '100px' } = {}) {
 
       if(el.isIntersecting) {
       
-        setIsNearScreen(true);
+         (true);
         observer.disconnect();
       }
     }

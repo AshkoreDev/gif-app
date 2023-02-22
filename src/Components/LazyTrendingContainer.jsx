@@ -10,7 +10,11 @@ function LazyTrendingContainer({fun, title}) {
 
 	return <Suspense fallback={<Spinner />}>
 		<div ref={fromRef}> 
-			{ isNearScreen ? <TrendingContainer fun={fun} title={title} /> : <Spinner /> } 
+			{ 
+				isNearScreen 
+					? <TrendingContainer fun={fun} title={title} /> 
+					: <Spinner /> 
+			} 
 		</div>
 	</Suspense>
 };
