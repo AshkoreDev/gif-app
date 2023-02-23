@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 
-export function useNearScreen({ distance = '100px' } = {}) {
+export function useNearScreen({ distance = '100px', externalRef, once = true } = {}) {
 
   const [isNearScreen, setIsNearScreen] = useState(false);
   const fromRef = useRef();
@@ -8,6 +8,7 @@ export function useNearScreen({ distance = '100px' } = {}) {
   useEffect(() => {
 
     let observer;
+    const element = externalRef ? externalRef.current : fromRef.current; 
 
     const onChange = (entries, observer) => {
 
@@ -15,8 +16,12 @@ export function useNearScreen({ distance = '100px' } = {}) {
 
       if(el.isIntersecting) {
       
-         (true);
-        observer.disconnect();
+        setIsNearScreen(true);
+        once && observer.disconnect();
+
+      } else {
+
+        !once && setIsNearScreen(false);
       }
     }
 
@@ -32,12 +37,12 @@ export function useNearScreen({ distance = '100px' } = {}) {
         rootMargin: distance
       })
 
-      observer.observe(fromRef.current);
+      if (element) observer.observe(element);
     })
 
 
     return () => observer && observer.disconnect();
   })
 
-  return {isNearScreen, fromRef}
+  return { isNearScreen, fromRef };
 };
