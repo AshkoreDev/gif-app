@@ -1,6 +1,6 @@
 import { API_URL, API_KEY } from './settings.jsx';
 
-function getStickers({keyword = 'panda', page = 0, limit = 6} = {}) {
+function getStickers({keyword = '', page = 0, limit = 6} = {}) {
 
   const API = `${API_URL}/stickers/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${page*limit}&rating=g`;
 

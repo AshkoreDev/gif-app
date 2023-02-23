@@ -13,8 +13,6 @@ const Gifs = () => {
   const externalRef = useRef();
   const { loading, data, setPage } = useData(getGifs, keyword);
   const { isNearScreen } = useNearScreen({ externalRef: loading ? null : externalRef, once: false });
-
-  const handleNextPage = () => {};
   
   const debounceHandlerNextPage = useCallback(debounce(
     () => setPage(prevPage => prevPage + 1), 100
