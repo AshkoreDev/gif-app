@@ -9,6 +9,11 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.app-content {
+  min-height: 100vh;
+  background: #282c34;
+}
+
 .container {
   min-height: 100vh;
   margin-top: 150px;

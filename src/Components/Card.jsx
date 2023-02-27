@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({id, title, url}) => {
+const Card = ({ id, title, url }) => {
 
   return (
 
