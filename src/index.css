@@ -11,7 +11,7 @@ body::-webkit-scrollbar {
 
 .container {
   min-height: 100vh;
-  margin-top: 180px;
+  margin-top: 150px;
   padding: 10px;
   /*background: black;*/
 }
@@ -22,7 +22,7 @@ body::-webkit-scrollbar {
 }
 
 .list {
-  height: 60vh;
+  min-height: 60vh;
   margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -96,6 +96,7 @@ nav {
   position: fixed;
   top: 0;
   background: white;
+  border-bottom: 1px solid black;
 }
 
 nav, nav ul, nav > a {
@@ -228,6 +229,12 @@ nav > a {
   50% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@media screen and (min-width: 424px) {
+  .container {
+    margin-top: 100px;
   }
 }
 

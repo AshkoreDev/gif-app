@@ -14,7 +14,7 @@ const Home = () => {
     <>
     	<TrendingContainer fun={getTrendingGifs} title="Trending Gifs" />
     	<LazyTrendingContainer fun={getTrendingStickers} title="Trending Stickers" />
-    	<LazySearchList />
+    	
     </>
 
   );
@@ -23,3 +23,5 @@ const Home = () => {
 export default Home;
 
 // https://uiball.com/loaders/
+//<LazySearchList />
+//
