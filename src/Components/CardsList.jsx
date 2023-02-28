@@ -1,23 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import Card from './Card.jsx';
 
-import getGifs from './../services/getgifs.jsx';
-
-
-const CardsList = ({ params }) => {
-
-	const { keyword } = params;
+const CardsList = ({ gifs }) => {
 	
-	const [gifs, setGifs] = useState([]);
-
-	useEffect(() => {
-
-		getGifs({ keyword })
-			.then(gifs => setGifs(gifs))
-
-	}, []);
-
   return (
 
     <section className="list">

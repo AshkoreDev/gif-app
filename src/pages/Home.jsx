@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { useLocation } from 'wouter';
 
+import CardsList from './../components/CardsList.jsx';
+
+import { useGifs } from './../hooks/useGifs.jsx';
+
 const Home = () => {
 	
-	const [keyword, setKeyword] = useState('');
+	const [keyword, setKeyword] = useState('panda');
 	const [path, pushLocation] = useLocation();
+	const { loading, gifs } = useGifs({ keyword });
 
 	const handleSubmit = (e) => {
 
@@ -21,6 +26,12 @@ const Home = () => {
 				<button>Buscar</button>
 				<input type="text" value={keyword} placeholder="..." onChange={handleChange} />
 			</form>
+
+			<h2>Última búsqueda</h2>
+			{ loading
+					? 'cargando'
+					: <CardsList gifs={gifs} />
+			}
 		</>
 
 	);
