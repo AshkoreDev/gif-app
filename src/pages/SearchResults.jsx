@@ -2,6 +2,8 @@ import React from 'react';
 import CardsList from './../components/CardsList.jsx';
 import { useGifs } from './../hooks/useGifs.jsx';
 
+import Spinner from './../components/Spinner';
+
 const SearchResults = ({ params }) => {
 	
 	const { keyword } = params;
@@ -9,12 +11,13 @@ const SearchResults = ({ params }) => {
 
 	return (
 
-		<>
+		<section className="container">
+		<h2 className="container--title">{keyword}</h2>
 			{ loading
-					? 'cargando'
+					? <Spinner/>
 					: <CardsList gifs={gifs} />
 			}
-		</>
+		</section>
 		
 	);
 };

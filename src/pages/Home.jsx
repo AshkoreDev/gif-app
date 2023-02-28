@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation } from 'wouter';
 import CardsList from './../components/CardsList.jsx';
 import { useGifs } from './../hooks/useGifs.jsx';
+import Spinner from './../components/Spinner';
 
 const Home = () => {
 	
@@ -28,7 +29,7 @@ const Home = () => {
 			<section className="container">
 				<h2 class="container--title">Última búsqueda</h2>
 				{ loading
-						? 'cargando'
+						? <Spinner/>
 						: <CardsList gifs={gifs} />
 				}
 			</section>
