@@ -195,6 +195,15 @@ form button {
 }
 
 /*MEDIA QUERIES*/
+@media (hover: hover) {
+  .logo:hover {
+    cursor: pointer;
+  }
+  form button:hover {
+    cursor: pointer;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container {
     padding: 0 20px;

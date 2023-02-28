@@ -27,7 +27,7 @@ const Home = () => {
 			</form>
 
 			<section className="container">
-				<h2 class="container--title">Última búsqueda</h2>
+				<h2 className="container--title">Última búsqueda</h2>
 				{ loading
 						? <Spinner/>
 						: <CardsList gifs={gifs} />
