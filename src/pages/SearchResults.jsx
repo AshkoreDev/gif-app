@@ -12,7 +12,7 @@ const SearchResults = ({ params }) => {
 	return (
 
 		<section className="container">
-		<h2 className="container--title">{ decodeURI(keyword) }</h2>
+			<h2 className="container--title">{ decodeURI(keyword) }</h2>
 			{ loading
 					? <Spinner/>
 					: <CardsList gifs={gifs} />

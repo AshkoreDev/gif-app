@@ -14,14 +14,7 @@ const TrendingSearches = () => {
 	}, []);
 
 
-	return (
-
-		<section className="trending__list">
-			<h2 className="trending--title">Tendencias</h2>
-			<Category trends={trends} />
-		</section>
-
-	);
+	return <Category trends={trends} />
 };
 
 export default TrendingSearches;

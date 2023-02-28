@@ -9,8 +9,7 @@ export default function getTrendingSearches() {
     .then(response => {
 
       const { data = [] } = response;
-
-      console.log(data);
+      
       return data;
     });
 };
