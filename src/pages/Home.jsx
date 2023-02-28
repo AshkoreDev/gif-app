@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { useLocation } from 'wouter';
-import CardsList from './../components/CardsList.jsx';
-import { useGifs } from './../hooks/useGifs.jsx';
+
 import Spinner from './../components/Spinner';
+import CardsList from './../components/CardsList.jsx';
+import TrendingSearches from './../components/TrendingSearches.jsx';
+
+import { useGifs } from './../hooks/useGifs.jsx';
 
 const Home = () => {
 	
@@ -33,6 +36,8 @@ const Home = () => {
 						: <CardsList gifs={gifs} />
 				}
 			</section>
+
+			<TrendingSearches />
 		</>
 
 	);

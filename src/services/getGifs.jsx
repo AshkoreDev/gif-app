@@ -1,5 +1,4 @@
-const API_URL = `https://api.giphy.com/v1`;
-const API_KEY = 'YplHkpvGL28F1ag0OiTg0OTxBgVVfFmi';
+import  { API_URL, API_KEY } from './settings.js';
 
 export default function getGifs({ keyword = 'panda' } = {}) {
 	
