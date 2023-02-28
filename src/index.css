@@ -9,6 +9,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+li {
+  list-style: none;
+}
+
 /*APP*/
 .app__content {
   min-height: 100vh;
@@ -86,6 +90,29 @@ form button {
   height: 100%;
   display: inline-block;
   background: #eee;
+}
+
+/*TRENDING SEARCHES*/
+.trending__list {
+  width: 100%;
+  margin: 40px auto;
+  padding: 10px;
+  /*background: #607d8b;*/
+}
+
+.category__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.category__list a {
+  color: white;
+  text-transform: capitalize;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
 }
 
 /*SPINNER*/
@@ -202,10 +229,14 @@ form button {
   form button:hover {
     cursor: pointer;
   }
+  .category__list a:hover {
+    border-color: white;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .container {
+  .container,
+  .trending__list {
     padding: 0 20px;
   }
   .search__form input {
@@ -214,7 +245,8 @@ form button {
 }
 
 @media screen and (min-width: 1024px) {
-  .container {
+  .container,
+  .trending__list {
     padding:  0 40px;
   }
 }

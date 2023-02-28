@@ -11,7 +11,8 @@ const LazyTrendingSearches = () => {
 	return (
 		
 		<section ref={fromRef} className="trending__list">
-				<h2 className="trending--title">Tendencias</h2>
+
+				<h2 className="container--title">Tendencias</h2>
 				<Suspense fallback={<Spinner/>}>
 				{
 					isNearScreen
@@ -19,6 +20,7 @@ const LazyTrendingSearches = () => {
 						: <Spinner/>
 				}
 			</Suspense>
+			
 		</section>
 
 	);
