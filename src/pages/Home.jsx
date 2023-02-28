@@ -25,11 +25,13 @@ const Home = () => {
 				<input type="text" value={keyword} placeholder="..." onChange={handleChange} />
 			</form>
 
-			<h2>Última búsqueda</h2>
-			{ loading
-					? 'cargando'
-					: <CardsList gifs={gifs} />
-			}
+			<section className="container">
+				<h2 class="container--title">Última búsqueda</h2>
+				{ loading
+						? 'cargando'
+						: <CardsList gifs={gifs} />
+				}
+			</section>
 		</>
 
 	);

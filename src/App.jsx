@@ -12,7 +12,7 @@ function App() {
   return (
 
     <>
-      <section className="app-content">
+      <section className="app__content">
       	
       	<Link to="/">
       		<img src={logo} className="logo" alt="Gif Logo"/>
