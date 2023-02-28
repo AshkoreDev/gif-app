@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-
 import getGifs from './../services/getGifs.jsx';
 
-export function useGifs({ keyword }) {
+export function useGifs({ keyword } = { keyword: null }) {
 	
 	const [loading, setLoading] = useState(false);
 	const [gifs, setGifs] = useState([]);
@@ -10,14 +9,18 @@ export function useGifs({ keyword }) {
 	useEffect(() => {
 
 		setLoading(true);
-		getGifs({ keyword })
+
+		const keywordToUse = keyword || localStorage.getItem('lastKeyword');
+
+		getGifs({ keyword: keywordToUse })
 			.then(gifs => {
 
 				setGifs(gifs);
 				setLoading(false);
+				localStorage.setItem('lastKeyword', keyword);
 			});
 
 	}, [keyword]);
 
-	return { loading, gifs }
+	return { loading, gifs };
 };

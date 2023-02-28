@@ -1,7 +1,5 @@
 import React from 'react';
-
 import CardsList from './../components/CardsList.jsx';
-
 import { useGifs } from './../hooks/useGifs.jsx';
 
 const SearchResults = ({ params }) => {
@@ -17,6 +15,7 @@ const SearchResults = ({ params }) => {
 					: <CardsList gifs={gifs} />
 			}
 		</>
+		
 	);
 };
 

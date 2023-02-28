@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import { useLocation } from 'wouter';
-
 import CardsList from './../components/CardsList.jsx';
-
 import { useGifs } from './../hooks/useGifs.jsx';
 
 const Home = () => {
 	
-	const [keyword, setKeyword] = useState('panda');
+	const [keyword, setKeyword] = useState('');
 	const [path, pushLocation] = useLocation();
-	const { loading, gifs } = useGifs({ keyword });
+	const { loading, gifs } = useGifs();
 
 	const handleSubmit = (e) => {
 

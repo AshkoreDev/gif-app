@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Card from './Card.jsx';
 
 const CardsList = ({ gifs }) => {
