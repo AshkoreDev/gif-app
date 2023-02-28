@@ -1,34 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import Spinner from './Spinner.jsx';
 import TrendingSearches from './TrendingSearches';
+import { useNearScreen } from './../hooks/useNearScreen.jsx';
 
 const LazyTrendingSearches = () => {
-
-	const [show, setShow] = useState(false);
-
-	useEffect(() => {
-
-		const onChange = (entries) => {
-
-			const element = entries[0];
-		}	
-
-
-		const observer = new IntersectionObserver(onChange, {
-			rootMargin: '100px'
-		});
-
-		observer.observe(element);
-	});
+	
+	const { isNearScreen, fromRef } = useNearScreen({ distance: '100px' });
 
 	return (
 
-		<>
+		<section ref={fromRef}>
 			{
-				show
+				isNearScreen
 					? <TrendingSearches/>
-					: null
+					: <Spinner/>
 			}
-		</>
+		</section>
 	);
 };
 

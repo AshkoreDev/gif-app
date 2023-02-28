@@ -3,7 +3,7 @@ import { useLocation } from 'wouter';
 
 import Spinner from './../components/Spinner';
 import CardsList from './../components/CardsList.jsx';
-import TrendingSearches from './../components/TrendingSearches.jsx';
+import LazyTrendingSearches from './../components/LazyTrendingSearches.jsx';
 
 import { useGifs } from './../hooks/useGifs.jsx';
 
@@ -37,7 +37,7 @@ const Home = () => {
 				}
 			</section>
 
-			<TrendingSearches />
+			<LazyTrendingSearches />
 		</>
 
 	);
