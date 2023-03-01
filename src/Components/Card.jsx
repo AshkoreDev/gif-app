@@ -11,4 +11,4 @@ const Card = ({ id, title, url }) => {
   );
 };
 
-export default Card;
+export default React.memo(Card, (prevProps, nextProps) => prevProps.id === nextProps.id);
