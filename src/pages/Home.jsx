@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useLocation } from 'wouter';
 
 import Spinner from './../components/Spinner';
 import CardsList from './../components/CardsList.jsx';
-import LazyTrendingSearches from './../components/LazyTrendingSearches.jsx';
 import SearchInput from './../components/SearchInput.jsx';
+import LazyTrendingSearches from './../components/LazyTrendingSearches.jsx';
 
 import { useGifs } from './../hooks/useGifs.jsx';
 
@@ -13,7 +13,7 @@ const Home = () => {
 	const [path, pushLocation] = useLocation();
 	const { loading, gifs } = useGifs();
 
-	const handleSubmit = ({ keyword }) => pushLocation(`/search/${keyword}`);
+	const handleSubmit = useCallback(({ keyword }) => pushLocation(`/search/${keyword}`), [pushLocation]);
 
 	return (
 

@@ -22,4 +22,4 @@ const SearchInput = ({ onSubmit }) => {
 	);
 };
 
-export default SearchInput;
+export default React.memo(SearchInput);
