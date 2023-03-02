@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import { useLocation } from 'wouter';
 
-import Spinner from './../components/Spinner';
 import CardsList from './../components/CardsList.jsx';
 import SearchInput from './../components/SearchInput.jsx';
 import LazyTrendingSearches from './../components/LazyTrendingSearches.jsx';
@@ -18,17 +17,15 @@ const Home = () => {
 	return (
 
 		<>
-			<SearchInput onSubmit={handleSubmit} />
+			<SearchInput onSubmit={handleSubmit}/>
+
 			<section className="home">
 				<section className="container home__container">
 					<h2 className="container--title">Última búsqueda</h2>
-					{ loading
-							? <Spinner/>
-							: <CardsList gifs={gifs} />
-					}
+					<CardsList gifs={gifs} loading={loading}/>
 				</section>
 
-				<LazyTrendingSearches />
+				<LazyTrendingSearches/>
 			</section>
 		</>
 

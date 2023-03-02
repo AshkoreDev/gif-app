@@ -14,7 +14,7 @@ const TrendingSearches = () => {
 	}, []);
 
 
-	return <Category trends={trends} />
+	return <Category trends={trends}/>
 };
 
 export default TrendingSearches;

@@ -8,7 +8,7 @@ import { useNearScreen } from './../hooks/useNearScreen.jsx';
 const SearchResults = ({ params }) => {
 	
 	const { keyword } = params;
-	const { loading, loadingNextPage, gifs, setPage } = useGifs({ keyword });
+	const { loading, gifs, setPage } = useGifs({ keyword });
 	const externalRef = useRef();
 	const { isNearScreen } = useNearScreen({ externalRef : loading ? null : externalRef, once: false });
 
@@ -27,13 +27,10 @@ const SearchResults = ({ params }) => {
 
 		<section className="container">
 			<h2 className="container--title">{ decodeURI(keyword) }</h2>
-			{ loading
-					? <Spinner/>
-					: <>
-							<CardsList gifs={gifs} />
-							<div id="watcher" ref={externalRef}></div>
-						</>
-			}
+			<div>
+				<CardsList gifs={gifs} loading={loading}/>
+				<div id="watcher" ref={externalRef}></div>
+			</div>
 		</section>
 		
 	);

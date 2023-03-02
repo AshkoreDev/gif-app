@@ -19,8 +19,8 @@ function App() {
           <h2>GIF APP</h2>
       	</Link>
 
-      	<Route path="/" component={Home} />
-      	<Route path="/search/:keyword" component={SearchResults} />
+      	<Route path="/" component={Home}/>
+      	<Route path="/search/:keyword" component={SearchResults}/>
       	
       </section>
 
