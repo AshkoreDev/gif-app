@@ -13,21 +13,29 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*APP*/
 .app__content {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: #282c34;
 }
 
 .logo {
-  width: 100px;
-  margin: 20px auto;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
 }
 
-h1 {
+.logo img {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.logo h2 {
   margin-bottom: 20px;
   color: white;
   font-size: 3em;
@@ -41,37 +49,47 @@ form {
 }
 
 form input {
-  width: 70%;
+  width: 240px;
   padding: 6px 12px;
   font-size: 1.4em;
   outline: none;
   border: 2px solid #68a37e;
-  border-radius: 0 10px 10px 0;
+  border-radius: 10px 0 0 10px;
 }
 
 form button {
-  padding: 9.5px 8px;
+  padding: 8.5px 8px;
   color: black;
-  font-size: 1em;
+  font-size: 1.1em;
+  font-weight: bold;
   text-align: center;
   border: 2px solid #68a37e;
-  border-radius: 10px 0 0 10px;
+  border-radius: 0 10px 10px 0;
   background: #68a37e;
 }
 
 /*CONTAINER*/
 .container {
-  width: 100%;
   min-height: 100vh;
   padding: 0 10px;
-  /*background: black;*/
 }
 
 .container--title {
-  margin: 40px 0 20px;
+  margin: 20px 0;
   color: white;
   letter-spacing: .1em;
   text-transform: uppercase;
+}
+
+.home {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.home__container {
+  width: 100%;
 }
 
 /*CARDSLIST*/
@@ -98,7 +116,7 @@ form button {
   width: 100%;
   margin: 40px auto;
   padding: 10px;
-  /*background: #607d8b;*/
+  background: #607d8b;
 }
 
 .category__list {
@@ -106,7 +124,7 @@ form button {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .category__list a {
@@ -238,16 +256,25 @@ form button {
 @media screen and (min-width: 768px) {
   .container,
   .trending__list {
-    padding: 0 20px;
-  }
-  .search__form input {
-    width: 50%;
+    padding: 0 20px 20px;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .container,
-  .trending__list {
+  .home__container {
+    width: 80%;
+  }
+  .container {
     padding:  0 40px;
+  }
+  .trending__list {
+    width: 18%;
+    height: 100vh;
+    margin: 0;
+    padding: 10px 35px;
+    text-align: center;
+  }
+  .trending__list h2 {
+    margin-bottom: 40px;
   }
 }

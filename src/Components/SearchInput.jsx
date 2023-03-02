@@ -15,8 +15,8 @@ const SearchInput = ({ onSubmit }) => {
 	return (
 
 		<form onSubmit={handleSubmit}>
+			<input type="text" value={keyword} placeholder="..." onChange={handleChange}/>
 			<button>Buscar</button>
-			<input type="text" value={keyword} placeholder="..." onChange={handleChange} />
 		</form>
 
 	);

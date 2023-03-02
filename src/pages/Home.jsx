@@ -19,15 +19,17 @@ const Home = () => {
 
 		<>
 			<SearchInput onSubmit={handleSubmit} />
-			<section className="container">
-				<h2 className="container--title">Última búsqueda</h2>
-				{ loading
-						? <Spinner/>
-						: <CardsList gifs={gifs} />
-				}
-			</section>
+			<section className="home">
+				<section className="container home__container">
+					<h2 className="container--title">Última búsqueda</h2>
+					{ loading
+							? <Spinner/>
+							: <CardsList gifs={gifs} />
+					}
+				</section>
 
-			<LazyTrendingSearches />
+				<LazyTrendingSearches />
+			</section>
 		</>
 
 	);
