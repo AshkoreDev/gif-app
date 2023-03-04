@@ -1,10 +1,12 @@
 import React, { useRef, useEffect, useCallback } from 'react';
 import debounce from 'just-debounce-it';
+import { Helmet } from 'react-helmet';
+
 import Spinner from './../components/Spinner';
 import CardsList from './../components/CardsList.jsx';
 
 import { useGifs } from './../hooks/useGifs.jsx';
-import { useSEO } from './../hooks/useSEO.jsx';
+
 import { useNearScreen } from './../hooks/useNearScreen.jsx';
 
 const SearchResults = ({ params }) => {
@@ -14,10 +16,9 @@ const SearchResults = ({ params }) => {
 	const externalRef = useRef();
 	const { isNearScreen } = useNearScreen({ externalRef : loading ? null : externalRef, once: false });
 
-	const title = gifs ? `${keyword} resultados` : '';
-	const description = `Resultados de la búsqueda de ${keyword}`;
-	useSEO({ title, description });
-
+	const title = gifs ? `Gif App | ${keyword} resultados` : '';
+	const description = `Resultados de la búsqueda de ${keyword}ss`;
+	
 	const debounceHandleNextPage = useCallback(debounce(() => setPage(prevPage => prevPage + 1), 200), [setPage]);
 
 	useEffect(() => {
@@ -32,6 +33,11 @@ const SearchResults = ({ params }) => {
 	return (
 
 		<section className="container">
+			<Helmet>
+				<title>{title}</title>
+				<meta name="description" content={description}/>
+			</Helmet>
+			
 			<h2 className="container--title">{ decodeURI(keyword) }</h2>
 			<div>
 				<CardsList gifs={gifs} loading={loading}/>

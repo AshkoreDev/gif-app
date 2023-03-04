@@ -1,27 +1,31 @@
 import React, { useCallback } from 'react';
 import { useLocation } from 'wouter';
+import { Helmet } from 'react-helmet';
 
 import CardsList from './../components/CardsList.jsx';
 import SearchInput from './../components/SearchInput.jsx';
 import LazyTrendingSearches from './../components/LazyTrendingSearches.jsx';
 
 import { useGifs } from './../hooks/useGifs.jsx';
-import { useSEO } from './../hooks/useSEO.jsx';
 
 const Home = () => {
 	
 	const [path, pushLocation] = useLocation();
 	const { loading, gifs } = useGifs();
 
-	const title = 'Buscador de Gifs';
+	const title = 'Gif App | Buscador de Gifs';
 	const description = 'Gif-App, página para buscar Gifs';
-	useSEO({ title, description });
 
 	const handleSubmit = useCallback(({ keyword }) => pushLocation(`/search/${keyword}`), [pushLocation]);
 
 	return (
 
 		<>
+			<Helmet>
+				<title>{title}</title>
+				<meta name="description" content={description}/>
+			</Helmet>
+
 			<SearchInput onSubmit={handleSubmit}/>
 
 			<section className="home">
