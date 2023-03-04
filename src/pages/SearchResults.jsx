@@ -2,7 +2,9 @@ import React, { useRef, useEffect, useCallback } from 'react';
 import debounce from 'just-debounce-it';
 import Spinner from './../components/Spinner';
 import CardsList from './../components/CardsList.jsx';
+
 import { useGifs } from './../hooks/useGifs.jsx';
+import { useSEO } from './../hooks/useSEO.jsx';
 import { useNearScreen } from './../hooks/useNearScreen.jsx';
 
 const SearchResults = ({ params }) => {
@@ -11,6 +13,10 @@ const SearchResults = ({ params }) => {
 	const { loading, gifs, setPage } = useGifs({ keyword });
 	const externalRef = useRef();
 	const { isNearScreen } = useNearScreen({ externalRef : loading ? null : externalRef, once: false });
+
+	const title = gifs ? `${keyword} resultados` : '';
+	const description = `Resultados de la búsqueda de ${keyword}`;
+	useSEO({ title, description });
 
 	const debounceHandleNextPage = useCallback(debounce(() => setPage(prevPage => prevPage + 1), 200), [setPage]);
 
