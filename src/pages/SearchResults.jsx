@@ -10,13 +10,13 @@ import { useNearScreen } from './../hooks/useNearScreen.jsx';
 
 const SearchResults = ({ params }) => {
 	
-	const { keyword, rating = 'g' } = params;
-	const { loading, gifs, setPage } = useGifs({ keyword, rating });
+	const { keyword, rating = 'g', lang = 'en' } = params;
+	const { loading, gifs, setPage } = useGifs({ keyword, rating, lang });
 	const externalRef = useRef();
 	const { isNearScreen } = useNearScreen({ externalRef : loading ? null : externalRef, once: false });
 
 	const title = gifs ? `Gif App | ${keyword} resultados` : '';
-	const description = `Resultados de la búsqueda de ${keyword}ss`;
+	const description = `Resultados de la búsqueda de ${keyword}`;
 	
 	const debounceHandleNextPage = useCallback(debounce(() => setPage(prevPage => prevPage + 1), 200), [setPage]);
 
@@ -37,7 +37,7 @@ const SearchResults = ({ params }) => {
 				<meta name="description" content={description}/>
 			</Helmet>
 
-			<SearchInput initialKeyword={keyword} initialRating={rating}/>
+			<SearchInput initialKeyword={keyword} initialRating={rating} initialLang={lang}/>
 
 			<h2 className="container--title">{ decodeURI(keyword) }</h2>
 			<div>
