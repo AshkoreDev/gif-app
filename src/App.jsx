@@ -15,7 +15,7 @@ function App() {
       <section className="app__content">
       	
       	<Link to="/" className="logo">
-      		<img src={logo} alt="Gif Logo" width="100"/>
+      		<img src={logo} alt="Gif Logo" width="60" height="60"/>
           <h2>GIF APP</h2>
       	</Link>
 

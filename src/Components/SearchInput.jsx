@@ -53,11 +53,16 @@ const SearchInput = ({ initialKeyword = '', initialRating = 'g' }) => {
 	return (
 
 		<form onSubmit={handleSubmit}>
-			<select name="ratingOptions" id="ratingOptions" value={rating} onChange={HandleChangeRating}>
-				{ RATINGS.map(rating => <option key={rating}>{rating}</option>) }
-			</select>
-			<input type="text" value={keyword} placeholder="..." onChange={handleChange}/>
-			<button>Buscar</button>
+			<div>
+				<input type="text" value={keyword} placeholder="..." onChange={handleChange}/>
+				<button>Buscar</button>
+			</div>
+			<div>
+				<select name="ratingOptions" id="ratingOptions" value={rating} onChange={HandleChangeRating}>
+					{ RATINGS.map(rating => <option key={rating}>{rating}</option>) }
+				</select>
+			</div>
+			
 		</form>
 
 	);
