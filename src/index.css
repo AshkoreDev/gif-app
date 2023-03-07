@@ -60,6 +60,10 @@ form div {
   justify-content: center;
 }
 
+form div:nth-child(2) {
+  gap: 20px;
+}
+
 form input {
   width: 240px;
   padding: 6px 12px;
@@ -80,6 +84,15 @@ form button {
   background: #68a37e;
 }
 
+form select {
+  padding: 4px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1.2em;
+  outline: none;
+  border: 2px solid #68a37e;
+  /* background-color: #68a37e; */
+}
 /*CONTAINER*/
 .home {
   margin: 40px 0 40px;
