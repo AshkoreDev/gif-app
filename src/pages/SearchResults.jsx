@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useCallback } from 'react';
 import debounce from 'just-debounce-it';
 import { Helmet } from 'react-helmet';
 
-import Spinner from './../components/Spinner';
 import CardsList from './../components/CardsList.jsx';
 import SearchInput from './../components/SearchInput.jsx';
 
@@ -11,8 +10,8 @@ import { useNearScreen } from './../hooks/useNearScreen.jsx';
 
 const SearchResults = ({ params }) => {
 	
-	const { keyword } = params;
-	const { loading, gifs, setPage } = useGifs({ keyword });
+	const { keyword, rating = 'g' } = params;
+	const { loading, gifs, setPage } = useGifs({ keyword, rating });
 	const externalRef = useRef();
 	const { isNearScreen } = useNearScreen({ externalRef : loading ? null : externalRef, once: false });
 
@@ -38,7 +37,7 @@ const SearchResults = ({ params }) => {
 				<meta name="description" content={description}/>
 			</Helmet>
 
-			<SearchInput/>
+			<SearchInput initialKeyword={keyword} initialRating={rating}/>
 
 			<h2 className="container--title">{ decodeURI(keyword) }</h2>
 			<div>

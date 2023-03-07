@@ -20,7 +20,7 @@ function App() {
       	</Link>
 
       	<Route path="/" component={Home}/>
-      	<Route path="/search/:keyword" component={SearchResults}/>
+      	<Route path="/search/:keyword/:rating?" component={SearchResults}/>
       	
       </section>
 

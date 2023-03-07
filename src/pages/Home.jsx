@@ -13,7 +13,7 @@ const Home = () => {
 
 	const title = 'Gif App | Buscador de Gifs';
 	const description = 'Gif-App, página para buscar Gifs';
-
+	
 	return (
 
 		<>
