@@ -1,13 +1,44 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import { useLocation } from 'wouter';
 
 const RATINGS = ['g', 'pg', 'pg-13', 'r'];
 
+const ACTIONS = {
+	UPDATE_KEYWORD: 'update_keyword',
+	UPDATE_RATING: 'update_rating'
+}
+
+const reducer = (state, action) => {
+
+	switch(action.type) {
+		
+		case ACTIONS.UPDATE_KEYWORD:
+			return {
+				...state,
+				keyword: action.payload
+			}
+
+		case ACTIONS.UPDATE_RATING:
+			return {
+				...state,
+				rating: action.payload
+			}
+		
+		default:
+			return state;
+	}
+};
+
 const SearchInput = ({ initialKeyword = '', initialRating = 'g' }) => {
 	
-	const [keyword, setKeyword] = useState(decodeURIComponent(initialKeyword));
-	const [rating, setRating] = useState(initialRating);
 	const [path, pushLocation] = useLocation();
+
+	const [state, dispatch] = useReducer(reducer, {
+		keyword: decodeURIComponent(initialKeyword),
+		rating: initialRating
+	});
+
+	const { keyword, rating } = state;
 
 	const handleSubmit = (e) => {
 
@@ -15,9 +46,9 @@ const SearchInput = ({ initialKeyword = '', initialRating = 'g' }) => {
 		pushLocation(`/search/${keyword}/${rating}`);
 	}
 
-	const handleChange = (e) => setKeyword(e.target.value);
+	const handleChange = (e) => dispatch({ type: ACTIONS.UPDATE_KEYWORD, payload: e.target.value });
 
-	const HandleChangeRating = (e) => setRating(e.target.value);
+	const HandleChangeRating = (e) => dispatch({ type: ACTIONS.UPDATE_RATING, payload: e.target.value });
 
 	return (
 

@@ -10,7 +10,7 @@ const CardsList = ({ gifs, loading }) => {
       {
       	loading
 	      	? <Spinner/>
-	        : gifs.map(({ id, title, url }) => <Card Key={id} id={id} title={title} url={url}/>)
+	        : gifs.map(({ id, title, url }) => <Card key={id} id={id} title={title} url={url}/>)
       }
     </section>
 
