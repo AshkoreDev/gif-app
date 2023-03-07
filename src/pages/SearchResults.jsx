@@ -4,9 +4,9 @@ import { Helmet } from 'react-helmet';
 
 import Spinner from './../components/Spinner';
 import CardsList from './../components/CardsList.jsx';
+import SearchInput from './../components/SearchInput.jsx';
 
 import { useGifs } from './../hooks/useGifs.jsx';
-
 import { useNearScreen } from './../hooks/useNearScreen.jsx';
 
 const SearchResults = ({ params }) => {
@@ -37,7 +37,9 @@ const SearchResults = ({ params }) => {
 				<title>{title}</title>
 				<meta name="description" content={description}/>
 			</Helmet>
-			
+
+			<SearchInput/>
+
 			<h2 className="container--title">{ decodeURI(keyword) }</h2>
 			<div>
 				<CardsList gifs={gifs} loading={loading}/>

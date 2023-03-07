@@ -1,5 +1,4 @@
-import React, { useCallback } from 'react';
-import { useLocation } from 'wouter';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import CardsList from './../components/CardsList.jsx';
@@ -10,13 +9,10 @@ import { useGifs } from './../hooks/useGifs.jsx';
 
 const Home = () => {
 	
-	const [path, pushLocation] = useLocation();
 	const { loading, gifs } = useGifs();
 
 	const title = 'Gif App | Buscador de Gifs';
 	const description = 'Gif-App, página para buscar Gifs';
-
-	const handleSubmit = useCallback(({ keyword }) => pushLocation(`/search/${keyword}`), [pushLocation]);
 
 	return (
 
@@ -26,7 +22,7 @@ const Home = () => {
 				<meta name="description" content={description}/>
 			</Helmet>
 
-			<SearchInput onSubmit={handleSubmit}/>
+			<SearchInput/>
 
 			<section className="home">
 				<section className="container home__container">
