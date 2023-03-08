@@ -30,7 +30,7 @@ const Home = () => {
 					<CardsList gifs={gifs} loading={loading}/>
 				</section>
 
-				<LazyTrendingSearches/>
+				<LazyTrendingSearches loading={loading}/>
 			</section>
 		</>
 

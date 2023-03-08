@@ -43,7 +43,7 @@ const SearchResults = ({ params }) => {
 			<SearchInput initialKeyword={keyword} initialRating={rating} initialLang={lang}/>
 
 			<h2 className="container--title">{ decodeURI(keyword) }</h2>
-			<button type="button" className={gifs.length >= 30 ? "upBtn upVisible" : "upBtn upInvisible"} onClick={handleUp} >
+			<button type="button" className={gifs.length >= 30 ? "upBtn upVisible" : "upBtn upInvisible"} onClick={handleUp}>
 				<img src="https://img.icons8.com/material-rounded/256/chevron.png" alt="Arrow up" width="40" height="40"/>
 			</button>
 

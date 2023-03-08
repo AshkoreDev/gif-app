@@ -73,11 +73,11 @@ const SearchInput = ({ initialKeyword = '', initialRating = 'g', initialLang = '
 
 			<div>
 				<select name="ratingOptions" id="ratingOptions" value={rating} onChange={HandleChangeRating}>
-					{ RATINGS.map(rating => <option key={rating}>{rating}</option>) }
+					{ RATINGS.map(rating => <option key={rating} value={rating}>{rating}</option>) }
 				</select>
 
 				<select name="langsOptions" id="langsOptions" value={lang} onChange={HandleChangeLang}>
-				{ LANGS.map(lang => <option key={lang}>{lang}</option>) }
+				{ LANGS.map(lang => <option key={lang} value={lang}>{lang}</option>) }
 				</select>
 			</div>
 			

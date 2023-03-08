@@ -4,7 +4,7 @@ import { useNearScreen } from './../hooks/useNearScreen.jsx';
 
 const TrendingSearches = React.lazy(()=> import('./TrendingSearches'));
 
-const LazyTrendingSearches = () => {
+const LazyTrendingSearches = ({ loading }) => {
 	
 	const { isNearScreen, fromRef } = useNearScreen();
 
@@ -13,13 +13,17 @@ const LazyTrendingSearches = () => {
 		<section ref={fromRef} className="trending__list">
 
 				<h2 className="container--title">Tendencias</h2>
-				<Suspense fallback={<Spinner/>}>
-				{
-					isNearScreen
-						? <TrendingSearches/>
-						: <Spinner/>
+
+				{ loading 
+						? <Spinner/>
+						: <Suspense fallback={<Spinner/>}>
+								{
+									isNearScreen
+										? <TrendingSearches/>
+										: <Spinner/>
+								}
+							</Suspense>
 				}
-			</Suspense>
 			
 		</section>
 
