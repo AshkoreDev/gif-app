@@ -19,15 +19,18 @@ const SearchResults = ({ params }) => {
 	const description = `Resultados de la búsqueda de ${keyword}`;
 	
 	const debounceHandleNextPage = useCallback(debounce(() => setPage(prevPage => prevPage + 1), 200), [setPage]);
-
+	
 	useEffect(() => {
 
 		if(isNearScreen) {
 
 			debounceHandleNextPage();
+			console.log(gifs.length);
 		}
 
 	}, [isNearScreen, debounceHandleNextPage]);
+
+	const handleUp = () => window.scrollTo(0, 0);
 
 	return (
 
@@ -40,10 +43,15 @@ const SearchResults = ({ params }) => {
 			<SearchInput initialKeyword={keyword} initialRating={rating} initialLang={lang}/>
 
 			<h2 className="container--title">{ decodeURI(keyword) }</h2>
+			<button type="button" className={gifs.length >= 30 ? "upBtn upVisible" : "upBtn upInvisible"} onClick={handleUp} >
+				<img src="https://img.icons8.com/material-rounded/256/chevron.png" alt="Arrow up" width="40" height="40"/>
+			</button>
+
 			<div>
 				<CardsList gifs={gifs} loading={loading}/>
 				<div id="watcher" ref={externalRef}></div>
 			</div>
+			
 		</section>
 		
 	);

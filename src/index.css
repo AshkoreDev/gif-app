@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: monospace;
+  font-family: 'Shantell Sans', cursive;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
@@ -10,7 +16,7 @@ body::-webkit-scrollbar {
 }
 
 body {
-   background: #282c34;
+  background: #282c34;
 }
 
 li {
@@ -42,7 +48,9 @@ a {
 .logo h2 {
   margin-bottom: 20px;
   color: white;
-  font-size: 3em;
+  font-size: 2.4em;
+  font-weight: 400;
+  font-style: italic;
 }
 
 /*FORM*/
@@ -67,7 +75,7 @@ form div:nth-child(2) {
 form input {
   width: 240px;
   padding: 6px 12px;
-  font-size: 1.4em;
+  font-size: 1.2em;
   outline: none;
   border: 2px solid #68a37e;
   border-radius: 10px 0 0 10px;
@@ -76,8 +84,8 @@ form input {
 form button {
   padding: 8.5px 8px;
   color: black;
-  font-size: 1.1em;
-  font-weight: bold;
+  font-size: 1em;
+  font-weight: 600;
   text-align: center;
   border: 2px solid #68a37e;
   border-radius: 0 10px 10px 0;
@@ -87,12 +95,13 @@ form button {
 form select {
   padding: 4px;
   border-radius: 8px;
-  font-weight: 500;
-  font-size: 1.2em;
+  font-weight: 400;
+  font-size: 1em;
   outline: none;
   border: 2px solid #68a37e;
   /* background-color: #68a37e; */
 }
+
 /*CONTAINER*/
 .home {
   margin: 40px 0 40px;
@@ -113,8 +122,35 @@ form select {
 .container--title {
   margin: 20px 0;
   color: white;
-  letter-spacing: .1em;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.upBtn {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: transparent;
+  border-radius: 50%;
+  outline-offset: 2px;
+  outline: 2px solid #68a37e;
+  background-color: #68a37e;
+}
+
+.upBtn img {
+  width: 30px;
+  height: 30px;
+}
+
+.upBtn.upVisible {
+ opacity: 0.6;
+}
+
+.upInvisible {
+  opacity: 0;
 }
 
 /*CARDSLIST*/
@@ -155,7 +191,7 @@ form select {
 
 .category__list a {
   color: white;
-  font-size: 1.3em;
+  font-size: 1em;
   text-transform: capitalize;
   text-decoration: none;
   border-bottom: 1px solid transparent;
@@ -274,6 +310,10 @@ form select {
   }
   form button:hover {
     cursor: pointer;
+  }
+  .upBtn:hover {
+    cursor: pointer;
+    opacity: 1;
   }
   .category__list a:hover {
     border-color: white;
