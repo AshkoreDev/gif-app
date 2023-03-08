@@ -14,13 +14,13 @@ function App() {
     <>
       <section className="app__content">
       	
-      	<Link to="/gif-app" className="logo">
+      	<Link to="/gif-app/" className="logo">
       		<img src={logo} alt="Gif Logo" width="60" height="60"/>
           <h2>GIF APP</h2>
       	</Link>
 
-      	<Route path="/gif-app" component={Home}/>
-      	<Route path="/search/:keyword/:rating?/:lang?" component={SearchResults}/>
+      	<Route path="/gif-app/" component={Home}/>
+      	<Route path="/gif-app/search/:keyword/:rating?/:lang?" component={SearchResults}/>
       	
       </section>
     </>

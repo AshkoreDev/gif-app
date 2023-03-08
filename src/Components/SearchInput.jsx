@@ -15,7 +15,7 @@ const SearchInput = ({ initialKeyword = '', initialRating = 'g', initialLang = '
 	const handleSubmit = (e) => {
 
 		e.preventDefault();
-		pushLocation(`/search/${keyword}/${rating}/${lang}`);
+		pushLocation(`/gif-app/search/${keyword}/${rating}/${lang}`);
 	}
 
 	const handleChangeKeyword = (e) => updateKeyword(e.target.value);
