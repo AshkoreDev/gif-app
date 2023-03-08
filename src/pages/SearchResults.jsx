@@ -25,7 +25,6 @@ const SearchResults = ({ params }) => {
 		if(isNearScreen) {
 
 			debounceHandleNextPage();
-			console.log(gifs.length);
 		}
 
 	}, [isNearScreen, debounceHandleNextPage]);
