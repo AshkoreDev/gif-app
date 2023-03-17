@@ -44,11 +44,22 @@ export function useForm({ initialKeyword, initialRating, initialLang }) {
   const { keyword, rating, lang } = state;
 
   return { 
+
     keyword,
     rating, 
     lang,
-    updateKeyword: keyword => dispatch({ type: ACTIONS.UPDATE_KEYWORD, payload: keyword }),
-    updateRating: rating => dispatch({ type: ACTIONS.UPDATE_RATING, payload: rating }),
-    updateLang: lang => dispatch({ type: ACTIONS.UPDATE_LANG, payload: lang })
+    updateKeyword: keyword => dispatch({ 
+			type: ACTIONS.UPDATE_KEYWORD, 
+			payload: keyword 
+		}),
+    updateRating: rating => dispatch({ 
+			type: ACTIONS.UPDATE_RATING, 
+			payload: rating 
+		}),
+    updateLang: lang => dispatch({ 
+			type: ACTIONS.UPDATE_LANG, 
+			payload: lang 
+		})
+		
   };
 };

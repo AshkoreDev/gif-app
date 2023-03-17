@@ -199,6 +199,34 @@ form select {
   border-bottom: 1px solid transparent;
 }
 
+/*ERROR PAGE*/
+.error-container {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.error-container h2 {
+  color: #fff;
+}
+
+.error-container img {
+  width: 200px;
+  height: 200px;
+}
+
+.error-container a {
+  padding: 10px 15px;
+  border: 2px solid #68a37e;
+  border-radius: 8px;
+  color: black;
+  font-size: 1em;
+  font-weight: 600;
+  background: #68a37e;
+}
+
 /*SPINNER*/
 .dot-spinner {
   --uib-size: 40px;
@@ -320,6 +348,10 @@ form select {
   .category__list a:hover {
     border-color: white;
   }
+  .error-container button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -337,7 +369,7 @@ form select {
     padding:  0 40px;
   }
   .trending__list {
-    width: 18%;
+    width: 19%;
     /*height: 86vh;*/
     height: 100vh;
     margin: 0;
