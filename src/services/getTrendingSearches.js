@@ -1,6 +1,6 @@
 import { API_URL, API_KEY } from './settings.js';
 
-export default function getTrendingSearches() {
+export const getTrendingSearches = () => {
 	
 	const API = `${API_URL}/trending/searches?api_key=${API_KEY}`;
 

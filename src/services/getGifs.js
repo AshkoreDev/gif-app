@@ -1,6 +1,6 @@
 import  { API_URL, API_KEY } from './settings.js';
 
-export default function getGifs({ limit = 12, keyword = 'panda', page = 0, rating = 'g', lang = 'en' } = {}) {
+export const getGifs = ({ limit = 12, keyword = 'panda', page = 0, rating = 'g', lang = 'en' } = {}) => {
 	
 	const API = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${page*limit}&rating=${rating}&lang=${lang}`;
 

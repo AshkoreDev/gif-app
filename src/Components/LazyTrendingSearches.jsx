@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react';
 import Spinner from './Spinner.jsx';
-import { useNearScreen } from './../hooks/useNearScreen.jsx';
+import { useNearScreen } from './../hooks/useNearScreen.js';
 
 const TrendingSearches = React.lazy(()=> import('./TrendingSearches'));
 
-const LazyTrendingSearches = ({ loading }) => {
+function LazyTrendingSearches({ loading }) {
 	
 	const { isNearScreen, fromRef } = useNearScreen();
 

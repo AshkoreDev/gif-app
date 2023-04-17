@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Category from './Category.jsx';
-import getTrendingSearches from './../services/getTrendingSearches.jsx';
+import { getTrendingSearches } from './../services/getTrendingSearches.js';
 
-const TrendingSearches = () => {
+function TrendingSearches() {
 	
 	const [trends, setTrends] = useState([]);
 

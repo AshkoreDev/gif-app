@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Card = ({ id, title, url }) => {
-
+function Card({ id, title, url }) {
+	
   return (
 
     <article className="card">

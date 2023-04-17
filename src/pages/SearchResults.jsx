@@ -1,14 +1,14 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import debounce from 'just-debounce-it';
 import { Helmet } from 'react-helmet';
 
 import CardsList from './../components/CardsList.jsx';
 import SearchInput from './../components/SearchInput.jsx';
 
-import { useGifs } from './../hooks/useGifs.jsx';
-import { useNearScreen } from './../hooks/useNearScreen.jsx';
+import { useGifs } from './../hooks/useGifs.js';
+import { useNearScreen } from './../hooks/useNearScreen.js';
 
-const SearchResults = ({ params }) => {
+function SearchResults({ params }) {
 	
 	const { keyword, rating = 'g', lang = 'en' } = params;
 	const { loading, gifs, setPage } = useGifs({ keyword, rating, lang });

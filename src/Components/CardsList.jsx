@@ -1,16 +1,15 @@
-import React from 'react';
 import Card from './Card.jsx';
-import Spinner from './Spinner';
+import Spinner from './Spinner.jsx';
 
-const CardsList = ({ gifs, loading }) => {
-	
+function CardsList({ gifs, loading }) {
+	console.log(gifs)
   return (
 
     <section className="list">
       {
       	loading
 	      	? <Spinner/>
-	        : gifs.map(({ id, title, url }) => <Card key={id} id={id} title={title} url={url}/>)
+	        : gifs.map(({ id, title, url }) => <Card key={url} id={id} title={title} url={url}/>)
       }
     </section>
 

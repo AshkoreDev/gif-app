@@ -1,11 +1,10 @@
-import React from 'react';
 import { Link } from 'wouter';
 import { Helmet } from 'react-helmet';
 import SearchInput from './../components/SearchInput.jsx';
 
 const gifsErrors = ['d2jjuAZzDSVLZ5kI', 'Bp3dFfoqpCKFyXuSzP', 'hv5AEBpH3ZyNoRnABG', 'hLwSzlKN8Fi6I'];
 
-const ErrorPage = () => {
+function ErrorPage() {
 
   const randomImage = () => `https://media.giphy.com/media/${gifsErrors[Math.floor(Math.random() * gifsErrors.length) + 1 ]}/giphy.gif`;
 
@@ -20,7 +19,7 @@ const ErrorPage = () => {
 				<meta name="description" content={description}/>
 			</Helmet>
 
-      <SearchInput />
+      <SearchInput/>
       
       <section className="error-container">
         <h2>Error 404</h2>

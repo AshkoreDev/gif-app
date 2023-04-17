@@ -1,14 +1,13 @@
-import React from 'react';
 import { Link } from 'wouter';
 
-const Category = ({ trends = [] }) => {
+function Category({ trends = [] }) {
 	
 	return (
 
 		<ul className="category__list">
 
 			{
-				trends.map(item => (
+				trends.map((item) => (
 
 					<li key={item}>
 						<Link to={`/search/${item}`}>{item}</Link>
@@ -17,6 +16,7 @@ const Category = ({ trends = [] }) => {
 			}
 
 		</ul>
+		
 	);
 };
 

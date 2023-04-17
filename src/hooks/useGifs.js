@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import getGifs from './../services/getGifs.jsx';
+import { getGifs } from './../services/getGifs.js';
 
 const INITIAL_PAGE = 0;
 
-export function useGifs({ keyword, rating, lang } = { keyword: null }) {
+export const useGifs = ({ keyword, rating, lang } = { keyword: null }) => {
 	
 	const [loading, setLoading] = useState(false);
 	const [gifs, setGifs] = useState([]);

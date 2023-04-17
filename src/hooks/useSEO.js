@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export function useSEO({ title, description }) {
+export const useSEO = ({ title, description }) => {
 	
 	const prevTitle = useRef(document.title);
 	const prevDescription = useRef(document.querySelector('meta[name="description"]').getAttribute('content'));

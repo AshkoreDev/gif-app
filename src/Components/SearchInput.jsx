@@ -1,13 +1,13 @@
 import React from 'react';
 import { useLocation } from 'wouter';
-import { useForm } from './../hooks/useForm';
+import { useForm } from './../hooks/useForm.js';
 
 const RATINGS = ['g', 'pg', 'pg-13', 'r'];
 
 const LANGS = ['en', 'es', 'pt', 'id', 'fr', 'ar', 'tr', 'th', 'de', 'it', 'ja', 'ru', 'zh-CN', 'zh-TW', 'ko', 'pl', 'nl', 'ro', 'hu', 'sv', 'cs', 'hi', 'bn', 'da', 'fa', 'tl', 'fi', 'he', 'ms', 'no', 'uk'];
 
 
-const SearchInput = ({ initialKeyword = '', initialRating = 'g', initialLang = 'en' }) => {
+function SearchInput({ initialKeyword = '', initialRating = 'g', initialLang = 'en' }) {
 	
 	const [path, pushLocation] = useLocation();
 	const { keyword, rating, lang, updateKeyword, updateRating, updateLang } = useForm({ initialKeyword, initialRating, initialLang });
@@ -49,5 +49,3 @@ const SearchInput = ({ initialKeyword = '', initialRating = 'g', initialLang = '
 };
 
 export default React.memo(SearchInput);
-
-// https://developers.giphy.com/docs/optional-settings/#language-support

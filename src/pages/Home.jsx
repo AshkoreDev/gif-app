@@ -5,9 +5,9 @@ import CardsList from './../components/CardsList.jsx';
 import SearchInput from './../components/SearchInput.jsx';
 import LazyTrendingSearches from './../components/LazyTrendingSearches.jsx';
 
-import { useGifs } from './../hooks/useGifs.jsx';
+import { useGifs } from './../hooks/useGifs.js';
 
-const Home = () => {
+function Home() {
 	
 	const { loading, gifs } = useGifs();
 

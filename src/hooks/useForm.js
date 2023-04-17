@@ -33,7 +33,7 @@ const reducer = (state, action) => {
 	}
 };
 
-export function useForm({ initialKeyword, initialRating, initialLang }) {
+export const useForm = ({ initialKeyword, initialRating, initialLang }) => {
 
   const [state, dispatch] = useReducer(reducer, {
 		keyword: decodeURIComponent(initialKeyword),
